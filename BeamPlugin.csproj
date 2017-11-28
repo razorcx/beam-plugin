@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TSVersionNumber>21.1</TSVersionNumber>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8BE3173F-A651-4195-AAB7-7DDE4ABB88E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeamPlugin</RootNamespace>
+    <AssemblyName>BeamPlugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Akit5, Version=5.7.0.0, Culture=neutral, PublicKeyToken=a70cba4ef557ee03">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.2.0, Culture=neutral, PublicKeyToken=a70cba4ef557ee03, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tekla.Structures, Version=$(TSVersionNumber).0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL" />
+    <Reference Include="Tekla.Structures.Catalogs, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114" />
+    <Reference Include="Tekla.Structures.Datatype, Version=2017.0.0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114" />
+    <Reference Include="Tekla.Structures.Dialog, Version=$(TSVersionNumber).0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL" />
+    <Reference Include="Tekla.Structures.Model, Version=$(TSVersionNumber).0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL" />
+    <Reference Include="Tekla.Structures.Plugins, Version=$(TSVersionNumber).0.0, Culture=neutral, PublicKeyToken=2f04dbe497b71114, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files\Tekla Structures\$(TSVersionNumber)\nt\bin\plugins\Tekla.Structures.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Tekla.Technology.MsgLib, Version=2.1.0.14283, Culture=neutral, PublicKeyToken=a70cba4ef557ee03" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BeamPluginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BeamPluginForm.Designer.cs">
+      <DependentUpon>BeamPluginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeamPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BeamPluginForm.resx">
+      <DependentUpon>BeamPluginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
